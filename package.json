@@ -1,0 +1,32 @@
+{
+    "name"            : "uberlevel"
+  , "description"     : "A lmdb wrapper (a convenience package bundling LevelUP & lmdb)"
+  , "version"         : "0.15.1"
+  , "contributors"    : [
+        "Rod Vagg <r@va.gg> (https://github.com/rvagg)"
+      , "Kenan Sulayman <kenan@sly.mn> (https://github.com/kenansulayman)"
+    ]
+  , "repository"      : {
+        "type"            : "git"
+      , "url"             : "https://github.com/KenanSulayman/uberlevel.git"
+    }
+  , "homepage"        : "https://github.com/KenanSulayman/uberlevel"
+  , "keywords": [
+        "lmdb"
+      , "stream"
+      , "database"
+      , "db"
+      , "store"
+      , "storage"
+      , "json"
+    ]
+  , "main"            : "index.js"
+  , "dependencies"    : {
+        "lmdb"       : "~0.1.0"
+      , "levelup"               : "~0.15.0"
+    }
+  , "scripts"         : {
+        "test"            : "node ./test.js"
+    }
+  , "license"         : "MIT"
+}
