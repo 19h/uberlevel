@@ -1,7 +1,12 @@
-var assert = require('assert')
+var is = require("assert"), fs = require("fs");
+var self = require("./");
 
-// :)
-assert(require('./') !== require('levelup'))
+var test = self("./x");
 
-// :)
-console.log('All good! level !== levelup')
+// might not have been implemented yet
+try {
+	test.destroy("./x");
+} catch(e) {
+	throw e;
+	is(0, "Can't destroy database.");
+}

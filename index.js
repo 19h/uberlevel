@@ -1,27 +1,25 @@
-var     levelup = require('levelup'),
-	ldH     = require("lmdb"),
-     	ldh_f   = function (location) { return new ldH(location) }
+var levelup = require('levelup'),
+        end = require("lmdb-edge");
 
-var LevelUP = function (location, options, callback) {
-	if ( options instanceof Function ) {
-		callback = options
-		options  = { db: ldh_f }
+module.exports = (function (end) {
+	return function uberlevel (location, options, callback) {
+	        if (typeof options === 'function')
+	                callback = options
+	        if (typeof options !== 'object')
+	                options = {}
+
+	        options.db = end
+
+	        var self = new levelup(location, options, callback);
+
+	        Object.keys(levelup).forEach(function(m) {
+			self[m] = function(location, callback) {
+				if (!end[m]) throw "'" + m + "' is not implemented."
+
+				end(location, callback || function() {})[m]
+			}
+	        })
+
+	        return self
 	}
-
-	// Can't be done more efficiently;
-	// Object.create(null) wouldn't have
-	// Object as constructor nor would it instanciate it
-	if ( typeof options === "object" )
-		options["db"] = ldh_f;
-
-	if ( !options )
-		options = { db: ldh_f };
-
-	return levelup ( location, options, callback )
-}
-
-Object.keys(levelup).forEach(function (a) {
-	LevelUP[a] = levelup[a];
-})
-
-module.exports = LevelUP;
+})(end)

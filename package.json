@@ -1,7 +1,7 @@
 {
 	"name": "uberlevel",
-	"description": "A lmdb wrapper (a convenience package bundling LevelUP & lmdb)",
-	"version": "0.1.0",
+	"description": "A lmdb-edge wrapper (LevelUP & lmdb-edge bundle)",
+	"version": "0.2.0",
 	"contributors": [
 		"Rod Vagg <r@va.gg> (https://github.com/rvagg)", "Kenan Sulayman <kenan@sly.mn> (https://github.com/kenansulayman)"
 	],
@@ -15,8 +15,8 @@
 	],
 	"main": "index.js",
 	"dependencies": {
-		"lmdb": "~0.1.0",
-		"levelup": "~0.15.0"
+		"lmdb-edge": "~0.1.2",
+		"levelup": "~0.17.0"
 	},
 	"scripts": {
 		"test": "node ./test.js"
