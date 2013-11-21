@@ -1,7 +1,7 @@
 {
 	"name": "uberlevel",
-	"description": "A lmdb-edge wrapper (LevelUP & lmdb-edge bundle)",
-	"version": "0.2.0",
+	"description": "A lmdb wrapper (level-lmdb with a cooler name)",
+	"version": "1.0.0",
 	"contributors": [
 		"Rod Vagg <r@va.gg> (https://github.com/rvagg)", "Kenan Sulayman <kenan@sly.mn> (https://github.com/kenansulayman)"
 	],
@@ -11,12 +11,12 @@
 	},
 	"homepage": "https://github.com/KenanSulayman/uberlevel",
 	"keywords": [
-		"lmdb", "stream", "database", "db", "store", "storage", "json"
+		"lmdb", "stream", "database", "db", "store", "storage", "json", "level", "leveldb"
 	],
 	"main": "index.js",
 	"dependencies": {
-		"lmdb-edge": "~0.1.2",
-		"levelup": "~0.17.0"
+		"lmdb"            : "*",
+		"level-packager"  : "*"
 	},
 	"scripts": {
 		"test": "node ./test.js"
